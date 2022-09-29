@@ -41,7 +41,7 @@ const Home = () => {
           <span className="ml-4">Project and Experience</span>
         </div>
         <p>
-          Sorry. Currently nothing here to show, wait for a me to gather my
+          Sorry. Currently nothing here to show, wait for me to gather my
           works or be my first client 🥰
         </p>
       </section>
