@@ -11,17 +11,8 @@ const Home = () => {
           className="rounded-full h-24 w-24 grayscale mt-4"
         />
         <h1 className="font-bold text-3xl mt-8 italic">fuadmahmud.dev</h1>
-        <h3 className="text-lg mt-4">
-          Software Developer at{" "}
-          <a
-            className="text-lg font-semibold"
-            href="https://www.linkedin.com/company/telekomunikasi-indonesia"
-            target={"_blank"}
-          >
-            Telkom Indonesia
-          </a>
-        </h3>
-        <p className="mt-4">Likes to solve problems and a long life learner.</p>
+        <h3 className="text-lg mt-4">Software Developer</h3>
+        <p className="mt-4">Likes to solve problems and a life long learner.</p>
       </section>
       <section className="mt-28" id="about">
         <div className="flex flex-row items-center mb-4">
@@ -41,8 +32,8 @@ const Home = () => {
           <span className="ml-4">Project and Experience</span>
         </div>
         <p>
-          Sorry. Currently nothing here to show, wait for me to gather my
-          works or be my first client 🥰
+          Sorry. Currently nothing here to show, wait for me to gather my works
+          or be my first client 🥰
         </p>
       </section>
     </div>
