@@ -7,7 +7,10 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="px-8 py-4 border-t border-gray-300" id="footer">
+    <footer
+      className="px-8 py-4 mt-4 border-t border-gray-300 bg-white dark:bg-zinc-900"
+      id="footer"
+    >
       <ul>
         <li className="mb-4">
           <a href="#about">About</a>
