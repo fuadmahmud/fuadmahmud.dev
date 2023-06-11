@@ -18,7 +18,12 @@ export type FormInput = {
   username: string;
   bio: string;
   links: Array<{ label: string; link: string }>;
-  background: string;
+  background: {
+    type: "flat" | "gradient" | "image";
+    image?: string;
+    color?: string;
+    colors?: { from: string; to: string };
+  };
   avatar: {
     image: string | null;
     radius: "circle" | "square";
@@ -130,10 +135,10 @@ const LinktreeFrom = () => {
       <Wrapper>
         <Title>Background</Title>
         <div className="flex flex-row gap-2">
-          <UnstyledButton className="flex items-center justify-center bg-gray-700 h-40 w-1/3 rounded text-white">
+          <UnstyledButton className="flex items-center justify-center bg-[#2B90A0] h-40 w-1/3 rounded text-white">
             Flat Color
           </UnstyledButton>
-          <UnstyledButton className="flex items-center justify-center bg-gray-700 h-40 w-1/3 rounded text-white">
+          <UnstyledButton className="flex items-center justify-center bg-gradient-to-t from-[#2B90A0] to-blue-500 h-40 w-1/3 rounded text-white">
             Gradient
           </UnstyledButton>
           <FileButton onChange={handleAvatar} accept="image/png,image/jpeg">
@@ -173,6 +178,18 @@ const LinktreeFrom = () => {
           Add more
         </Button>
       </Wrapper>
+      <Wrapper>
+        <Title>Button</Title>
+      </Wrapper>
+      <Wrapper>
+        <Title>Fonts</Title>
+      </Wrapper>
+      <Button
+        className="bg-[#2B90A0] text-white rounded w-full mt-4"
+        type="button"
+      >
+        Preview
+      </Button>
     </form>
   );
 };
