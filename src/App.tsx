@@ -5,7 +5,9 @@ import { MantineProvider } from "@mantine/core";
 
 function App() {
   return (
-    <MantineProvider>
+    <MantineProvider
+      theme={{ fontFamily: "Be Vietnam Pro, system-ui, sans-serif" }}
+    >
       <RouterProvider router={router} />
     </MantineProvider>
   );

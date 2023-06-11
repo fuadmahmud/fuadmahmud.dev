@@ -10,13 +10,13 @@ const Header = () => {
     setShowMenu(false);
     switch (menuName) {
       case "contact":
-        window.location.href = "#footer";
+        window.location.href = "/#footer";
         break;
       case "about":
-        window.location.href = "#about";
+        window.location.href = "/#about";
         break;
       case "works":
-        window.location.href = "#works";
+        window.location.href = "/#works";
         break;
       default:
         break;
@@ -76,7 +76,7 @@ const Header = () => {
             className="w-1/2 h-full bg-white/50 dark:bg-zinc-900/50"
             onClick={() => setShowMenu(false)}
           />
-          <div className="flex flex-col h-full bg-white dark:bg-zinc-900 py-8 px-4">
+          <div className="flex flex-col h-full bg-white dark:bg-zinc-900 py-8 px-4 w-1/2">
             <ul className="space-y-8">
               <li
                 className="border-b border-gray-300 pb-2 font-bold"

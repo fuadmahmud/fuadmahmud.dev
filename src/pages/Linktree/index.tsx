@@ -1,4 +1,4 @@
-import LinktreeFrom from "../../components/Form/LinktreeForm";
+import LinktreeFrom from "../../components/LinktreeForm/LinktreeForm";
 
 const Linktree = () => {
   return (

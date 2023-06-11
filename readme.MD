@@ -6,6 +6,7 @@ This personal web portfolio is using couple technologies including:
 - [react-hook-form](https://react-hook-form.com/)
 - [tailwind](https://tailwindcss.com/)
 - [mantine](https://mantine.dev/)
+- [react-color](https://casesandberg.github.io/react-color/)
 
 ## How to run
 
