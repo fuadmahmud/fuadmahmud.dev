@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { classNames } from "../utils";
+import { classNames } from "../../utils";
 
 export const Title = ({
   children,

@@ -21,7 +21,7 @@ import DefaultAvatar from "../../assets/default.jpg";
 import { BiImageAdd } from "react-icons/bi";
 import { MdOutlineDragIndicator, MdDelete } from "react-icons/md";
 import { ChromePicker, ColorResult } from "react-color";
-import { classNames } from "../utils";
+import { classNames } from "../../utils";
 import { SubTitle, Title } from "../Typography";
 
 type Color = { hex: string; a: string | number };
@@ -171,11 +171,13 @@ const LinktreeFrom = () => {
     <form>
       <Wrapper>
         <Title>Profile</Title>
-        <Input
-          icon={<MdAlternateEmail />}
-          placeholder="Enter your username"
-          {...register("username")}
-        />
+        <Input.Wrapper withAsterisk label="Create your username">
+          <Input
+            icon={<MdAlternateEmail />}
+            placeholder="Enter your username"
+            {...register("username", { pattern: /^\w+$/ })}
+          />
+        </Input.Wrapper>
         <Textarea
           className="mt-4"
           placeholder="Enter your bio"

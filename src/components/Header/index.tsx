@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
 import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
+import { useGlobalQueryState } from "../../hooks";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+  const { getData, setData } = useGlobalQueryState();
+  const [darkMode, setDarkMode] = useState(getData<boolean>("theme"));
   const [showTooltip, setShowTooltip] = useState(false);
+
   const handleClick = (menuName: string) => {
     setShowMenu(false);
     switch (menuName) {
@@ -30,9 +34,11 @@ const Header = () => {
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       setDarkMode(true);
+      setData("theme", true);
       document.documentElement.classList.add("dark");
     } else {
       setDarkMode(false);
+      setData("theme", false);
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
@@ -51,7 +57,7 @@ const Header = () => {
   return (
     <header className="flex flex-row bg-white dark:bg-zinc-900 items-center justify-between h-16 w-full fixed z-10 p-4">
       <div
-        className="relative w-4/5 cursor-pointer"
+        className="relative cursor-pointer w-max"
         onClick={() => {
           handleDarkMode();
           if (darkMode) setShowTooltip(true);
@@ -59,7 +65,7 @@ const Header = () => {
       >
         {darkMode ? <MdOutlineDarkMode /> : <MdLightMode />}
         {showTooltip && (
-          <p className={["text-xs", styles.tooltip].join(" ")}>
+          <p className={["text-xs text-white", styles.tooltip].join(" ")}>
             Honestly, I prefer dark mode to not burn your eyes, but here you go
           </p>
         )}
@@ -78,20 +84,25 @@ const Header = () => {
           />
           <div className="flex flex-col h-full bg-white dark:bg-zinc-900 py-8 px-4 w-1/2">
             <ul className="space-y-8">
+              <Link to="/">
+                <li className="border-b border-gray-300 pb-2 font-bold cursor-pointer">
+                  Home
+                </li>
+              </Link>
               <li
-                className="border-b border-gray-300 pb-2 font-bold"
+                className="border-b border-gray-300 pb-2 font-bold cursor-pointer"
                 onClick={() => handleClick("about")}
               >
                 About
               </li>
               <li
-                className="border-b border-gray-300 pb-2 font-bold"
+                className="border-b border-gray-300 pb-2 font-bold cursor-pointer"
                 onClick={() => handleClick("works")}
               >
-                Project and Experience
+                Blog & Projects
               </li>
               <li
-                className="border-b border-gray-300 pb-2 font-bold"
+                className="border-b border-gray-300 pb-2 font-bold cursor-pointer"
                 onClick={() => handleClick("contact")}
               >
                 Contact
