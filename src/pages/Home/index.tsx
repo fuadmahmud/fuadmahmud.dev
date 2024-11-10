@@ -11,7 +11,7 @@ import anime from "animejs";
 
 const Home = () => {
   const query = useQuery("articles", getArticles);
-  const articles = query?.data?.data.slice(0, 3);
+  const articles = query?.data?.data?.slice(0, 3);
   const worksSection = useRef(null);
   const { ref: worksRef, entry } = useIntersection({
     root: worksSection.current,
